@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Morphix - Automated Backporting Tool</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/resume.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" >
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">Morphix</span>
+      <span class="d-none d-lg-block">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#overview">Overview</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#workflow">Workflow</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#tool">Tool</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#subjects">Subjects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#evaluation">Evaluation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#apr">Artifacts</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+
+    <section class="resume-section d-flex align-items-center" id="overview">
+      <div class="w-100">
+        <h1 class="mb-0">Automated
+          <span class="text-primary">Patch</span> Backporting
+        </h1>
+        <div class="subheading mb-5">Automated Backporting, Software Transplantation, Program Transformation, Program Repair
+        </div>
+        <p class="lead mb-5">
+
+          Component-oriented programming enables ad-hoc and low-cost code integration from multiple sources,
+          which has a negative connotations because it requires developers to port changes and bug fixes from
+          peer projects during software evolution. Adding features and fixing bugs often requires systematic
+          edits that are similar but not identical changes to many code locations. Finding such locations and
+          making the correct edit is a tedious and error-prone process for developers. Morphix(Morph Fix) can help
+          you in automating the process.
+
+          <br><br>
+          In this research, we propose an end-to-end tool named Morphix that transfer code edits from
+          one program  to another similar program by generating an abstract edit script to automatically
+          identifying edit locations and transform the code to apply and verify the patch.
+          We not that the publication of patches make an un-patched implementation more vulnerable,
+          our proposed techniques should serve a long-standing need in practice.
+
+        </p>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="workflow">
+      <div class="w-100">
+        <h2 class="mb-5">Approach</h2>
+
+        <div class="subheading mb-3">High Level Overview</div>
+        ADD IMAGE
+        <div class="subheading mb-3">Summary</div>
+        <p>
+         Add Text
+        </p>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="tool">
+      <div class="w-100">
+        <h2 class="mb-5">Tool</h2>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5" style="margin-top: -50px">
+        Implemented in Python and C++, this github repository contains the source for Morphix and the scripts for the data sets,
+        including benchmarks, that we used for our experiments.
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Dependencies</h3>
+            <br>
+            <ul>
+              <li>
+                LLVM - 7.0
+              <li>
+              Clang - 7.0
+              <li>
+                Python - 3.6
+            </ul>
+
+          </div>
+
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Source Files</h3>
+            <br>
+            <p>
+              will be made public
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Docker Image</h3>
+            <br>
+            will be made available
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="subjects">
+      <div class="w-100">
+        <h2 class="mb-5">Evaluation Benchmarks</h2>
+        <div>
+          <div class="resume-content">
+            ADD DATA
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="evaluation">
+      <div class="w-100">
+        <h2 class="mb-5">Evaluation Results</h2>
+         ADD RESULTS
+      </div>
+    </section>
+
+    <hr class="m-0">
+ <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="apr">
+      <div class="w-100">
+        <h2 class="mb-5">Artifacts</h2>
+        <p>
+          We list below the following artifacts for some of the experiment in our evaluation section of the paper; the developer patch
+          from the donor, the generated patch by our tool for the target, Linux diff utils generated patch and SYDIT generated patch for comparison purposes. <br>
+        </p>
+
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/resume.min.js"></script>
+
+</body>
+
+</html>
