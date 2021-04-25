@@ -1,0 +1,10 @@
+*.o
+*.bc
+*.a
+.idea
+app/__pycache__/
+logs
+output
+venv
+*.DS_Store
+.devcontainer

@@ -5,11 +5,12 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="FixMorph - Automated Backporting">
+  <meta name="author" content="Ridwan Shariffdeen">
 
-  <title>Morphix - Automated Backporting Tool</title>
+  <title>FixMorph - Automated Backporting</title>
 
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -46,7 +47,7 @@
           <a class="nav-link js-scroll-trigger" href="#tool">Tool</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#subjects">Subjects</a>
+          <a class="nav-link js-scroll-trigger" href="#subjects">Data Set</a>
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#evaluation">Evaluation</a>
@@ -56,32 +57,37 @@
         </li>
       </ul>
     </div>
+    <a href="https://hub.docker.com/repository/docker/rshariffdeen/fixmorph"><img height="20" alt="Docker Pulls" src="https://img.shields.io/docker/pulls/rshariffdeen/fixmorph?style=plastic"></a>
+    &nbsp;&nbsp;
+    <!-- Place this tag where you want the button to render. -->
+    <a class="github-button" href="https://github.com/rshariffdeen/FixMorph" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" aria-label="Download rshariffdeen/FixMorph on GitHub">Github Repo</a>
+    &nbsp;&nbsp;
+    <a href="ISSTA21.pdf"><button class="btn btn-sm btn-info" style="alignment: right; margin-bottom: 9px;"> Download Pre-Print </button></a>
   </nav>
 
   <div class="container-fluid">
 
     <section class="resume-section d-flex align-items-center" id="overview">
       <div class="w-100">
+        <br><br>
         <h1 class="mb-0">
-          <span class="text-primary">MORPHIX</span> : MORPH FIX
+          <span class="text-primary">Fix</span>Morph
         </h1>
-        <div class="subheading mb-5">Automated Backporting, Software Transplantation, Program Transformation, Program Repair
+        <div class="subheading mb-5">Program Transformation, Patch Backporting, Code Transplantation
         </div>
-        <p class="lead mb-5">
+        <p class="lead mb-5" align='justify'>
+          <img src="img/FixMorph-Idea.jpeg" style="display: table-cell;float: right; width: 800px">
 
           Component-oriented programming enables ad-hoc and low-cost code integration from multiple sources,
           which has a negative connotations because it requires developers to port changes and bug fixes from
           peer projects during software evolution. Adding features and fixing bugs often requires systematic
           edits that are similar but not identical changes to many code locations. Finding such locations and
-          making the correct edit is a tedious and error-prone process for developers. Morphix(Morph Fix) can help
-          you in automating the process.
-
-          <br><br>
-          In this research, we propose an end-to-end tool named Morphix that transfer code edits from
+          making the correct edit is a tedious and error-prone process for developers. FixMorph can help
+          you in automating the process. In this research, we propose an end-to-end tool named FixMorph that transfer code edits from
           one program  to another similar program by generating an abstract edit script to automatically
-          identify edit locations and transform the code to apply and verify the patch.
-          We note that the publication of patches make an un-patched implementation more vulnerable,
-          our proposed techniques should serve a long-standing need in practice.
+          identify edit locations and transform the code to apply and verify the patch. Apart from automation of software maintenance tasks, patch backporting
+          helps in reducing the exposure to known security vulnerabilities which have not been fixed.
+
 
         </p>
       </div>
@@ -91,13 +97,17 @@
 
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="workflow">
       <div class="w-100">
+        <br><br>
         <h2 class="mb-5">Approach</h2>
-
-        <div class="subheading mb-3">High Level Overview</div>
-        ADD IMAGE
-        <div class="subheading mb-3">Summary</div>
-        <p>
-         Add Text
+        <p class="lead mb-5" align='justify'>
+          <img src="img/FixMorph-Workflow.jpeg" style="display: table-cell;float: left; width: 600px; margin-right: 50px">
+          Given a pair of reference/donor program versions Pa and Pb and a target/host program Pc to apply the transformation,
+          FixMorph first extracts the syntactic edits between Pa and Pb  to learn a transformation that generalizes the change in the code.
+          Second, using evolution history (i.e. version control history) and/or clone detection FixMorph localize the correct location to apply
+          the transformation from Pa to Pc. Next, analysing the abstract syntax trees of Pa and Pc, FixMorph generates an alignment between the two versions to adapt the learnt
+          transformation. Based on the alignment the transformation will be customized with namespace adaptations, code evolution
+          (i.e. importing missing dependencies). Finally, the transformation will be enforced to source-level changes using LLVM/Clang front-end
+          infrastructure. Finally, the changes will be verified for syntactic correctness using static-analysers.
         </p>
       </div>
     </section>
@@ -105,61 +115,49 @@
     <hr class="m-0">
 
     <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="tool">
+
       <div class="w-100">
+        <br><br>
         <h2 class="mb-5">Tool</h2>
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5" style="margin-top: -50px">
-        Implemented in Python and C++, this github repository contains the source for Morphix and the scripts for the data sets,
-        including benchmarks, that we used for our experiments.
+          Implemented in Python and C++, this github repository contains the source for FixMorph and the scripts for the data sets,
+          including test suites, that we used for our experiments.
         </div>
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
-            <h3 class="mb-0">Dependencies</h3>
-            <br>
+            <h4 class="mb-0">Dependencies</h4>
             <ul>
               <li>
-                LLVM - 7.0
+                LLVM - 10.0
               <li>
-              Clang - 7.0
+                Clang - 10.0
               <li>
-                Python - 3.6
+                Python - 3.7
             </ul>
 
-          </div>
-
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Source Files</h3>
-            <br>
+            <h4 class="mb-0">Source Files</h4>
             <p>
-              will be made public
+              <a href="https://github.com/rshariffdeen/FixMorph">Github Repository</a>
             </p>
 
-          </div>
-
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Docker Image</h3>
-            <br>
-            will be made available
+            <h4 class="mb-0">Docker Image</h4>
+            <a href="https://hub.docker.com/repository/docker/rshariffdeen/fixmorph">Dockerhub Repository</a><br>
+            Docker image only with the tool can be obtained using the tag <b>latest</b><br>
+            Docker image with scripts to reproduce the experiments can be obtained using the tag <b>issta21</b>
 
           </div>
 
         </div>
 
       </div>
-
     </section>
 
     <hr class="m-0">
 
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="subjects">
       <div class="w-100">
-        <h2 class="mb-5">Evaluation Benchmarks</h2>
+        <h2 class="mb-5">Data-Set</h2>
         <div>
           <div class="resume-content">
             ADD DATA
