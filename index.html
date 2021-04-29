@@ -67,7 +67,7 @@
     &nbsp; &nbsp;
     <a href="https://github.com/rshariffdeen/FixMorph"><button class="btn btn-sm btn-dark" style="alignment: right; margin-bottom: 9px;"><i class="bi bi-github"></i>  Github Repo </button></a>
     &nbsp; &nbsp;
-    <a href="ISSTA21.pdf"><button class="btn btn-sm btn-dark" style="alignment: right; margin-bottom: 9px;"><i class="bi bi-file-earmark-text-fill"></i>  Download Pre-Print </button></a>
+<!--    <a href="ISSTA21.pdf"><button class="btn btn-sm btn-dark" style="alignment: right; margin-bottom: 9px;"><i class="bi bi-file-earmark-text-fill"></i>  Download Pre-Print </button></a>-->
   </nav>
 
   <div class="container-fluid">
@@ -85,15 +85,25 @@
         <p class="lead mb-5" align='justify'>
           <img src="img/FixMorph-Idea.jpeg" style="display: table-cell;float: right; width: 800px">
 
-          Component-oriented programming enables ad-hoc and low-cost code integration from multiple sources,
-          which has a negative connotations because it requires developers to port changes and bug fixes from
-          peer projects during software evolution. Adding features and fixing bugs often requires systematic
-          edits that are similar but not identical changes to many code locations. Finding such locations and
-          making the correct edit is a tedious and error-prone process for developers. FixMorph can help
-          you in automating the process. In this research, we propose an end-to-end tool named FixMorph that transfer code edits from
-          one program  to another similar program by generating an abstract edit script to automatically
-          identify edit locations and transform the code to apply and verify the patch. Apart from automation of software maintenance tasks, patch backporting
-          helps in reducing the exposure to known security vulnerabilities which have not been fixed.
+            Whenever a bug or vulnerability is detected in the Linux kernel, the
+            kernel developers will endeavour to fix it by introducing a patch
+            into the mainline version of the Linux kernel source tree. However,
+            many users run older “stable” versions of Linux, meaning that the
+            patch should also be “backported” to one or more of these older
+            kernel versions. This process is error-prone and there is usually a
+            long delay in publishing the backported patch.
+            Based on an empirical study, we show that around 8% of all commits submitted to Linux mainline are backported to older versions,
+            but often more than one month elapses before the backport is available. Hence, we propose a patch backporting technique that can
+            automatically transfer patches from the mainline version of Linux
+            into older stable versions. Our approach first synthesizes a partial
+            transformation rule based on a Linux mainline patch. This rule
+            can then be generalized by analysing the alignment between the
+            mainline and target versions. The generalized rule is then applied
+            to the target version to produce a backported patch. We have implemented our transformation technique in a tool called FixMorph
+            and evaluated it on 350 Linux mainline patches. FixMorph correctly backports 75.1% of them. Compared to existing techniques,
+            FixMorph improves both the precision and recall in backporting
+            patches. Apart from automation of software maintenance tasks,
+            patch backporting helps in reducing the exposure to known security vulnerabilities which have not been fixed.
 
 
         </p>
