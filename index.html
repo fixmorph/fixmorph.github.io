@@ -178,10 +178,15 @@
         <h2 class="mb-5">Data-Set</h2>
         <div>
           <div class="resume-content">
+            <h4>Classification Data-Set</h4>
+            To investigate the patch backporting effort required for a developer, we manually inspect the backported patches. We choose to study
+            only the patches backported from a specific version (i.e., v3.8). We label commits based on the difficulty of backporting using the classification specified in the paper.
+            <br><br>
+
+              <h4>Evaluation Data-Set</h4>
             We build our dataset in the form of patch pairs (P<sub>mainline</sub>, P<sub>stable</sub>), where P<sub>mainline</sub> is the patch committed
             to the mainline version of Linux Kernel, and P<sub>stable</sub> is the patch backported to an stable version. We build our dataset
             according to the following criteria:
-            <br><br>
             <ul>
               <li> Patch P<sub>mainline</sub> was submitted to the mainline during 2011-2019 and versions below 5.0
               <li> To generate typed ASTs, the mainline version should be compilable before and after introducing P<sub>mainline</sub>,
@@ -191,18 +196,16 @@
               <li> If P<sub>mainline</sub> has been backported to multiple versions, we select the oldest one as P<sub>stable</sub> which represents
               the most challenging task
             </ul>
-            <br>
 
-            With the above criteria, we select 350 patches with general bug-fixes and feature additions, and  30 patches that fix CVEs reported during 2014-2019.
+            <h4>CVE Data-Set</h4>
+            Using the same criteria above we randomly selected 30 patches that fix CVEs reported during 2014-2019.
             Note that the 30 CVE patches are disjoint from the 350 patches in our main dataset.
-
             <br><br>
-            <a href="data/Classified-data-set.xlsx" class="btn btn-lg btn-danger"><i class="bi bi-download"></i>  Classified Data-Set</a>
+            <a href="data/Classified-data-set.xlsx" class="btn btn-danger"><i class="bi bi-download"></i>  Classification Data-Set</a>
             &nbsp; &nbsp;
-            <a href="data/Main-data-set.xlsx" class="btn btn-lg btn-danger"><i class="bi bi-download"></i>  Evaluation Data-Set</a>
+            <a href="data/Main-data-set.xlsx" class="btn btn-danger"><i class="bi bi-download"></i>  Evaluation Data-Set</a>
             &nbsp; &nbsp;
-            <a href="data/CVE-data-set.xlsx" class="btn btn-lg btn-danger"><i class="bi bi-download"></i>  CVE Data-Set</a>
-
+            <a href="data/CVE-data-set.xlsx" class="btn btn-danger"><i class="bi bi-download"></i>  CVE Data-Set</a>
 
           </div>
         </div>
